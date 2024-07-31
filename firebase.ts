@@ -3,12 +3,12 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCSgpmaV6hUL2iIGV37GOyzBNortSdwY9I",
-  authDomain: "chat-with-pdf-dd05f.firebaseapp.com",
-  projectId: "chat-with-pdf-dd05f",
-  storageBucket: "chat-with-pdf-dd05f.appspot.com",
-  messagingSenderId: "329193794186",
-  appId: "1:329193794186:web:43db977014c071436b5b73",
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
