@@ -21,7 +21,7 @@ export async function deleteDocument(docId: string) {
 
   // Delete from firebase storage
   await adminStorage
-    .bucket(process.env.FIREBASE_STORAGE_BUCKET) // update with env variable
+    .bucket(process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET) // update with env variable
     .file(`users/${userId}/files/${docId}`)
     .delete();
 

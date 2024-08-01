@@ -1,10 +1,12 @@
-import { initializeApp, getApps, getApp, cert, App } from "firebase-admin/app";
+import { initializeApp, getApps, App, getApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
+import { getStorage } from "firebase-admin/storage";
 
 const serviceKey = require("@/service_key.json");
+
 let app: App;
 
-if (!getApps().length) {
+if (getApps().length === 0) {
   app = initializeApp({
     credential: cert(serviceKey),
   });
@@ -13,5 +15,6 @@ if (!getApps().length) {
 }
 
 const adminDb = getFirestore(app);
+const adminStorage = getStorage(app);
 
-export { adminDb, app as AdminApp };
+export { app as adminApp, adminDb, adminStorage };
